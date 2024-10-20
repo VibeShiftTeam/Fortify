@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    background-color: #121212;
+}
+header {
+    background: linear-gradient(to bottom right, #1e1e1e, #3a3a3a); 
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.container {
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    margin-top: 20px;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 18px;
+}
+.btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.1);
+}
+h1 {
+    font-size: 48px;
+    margin: 0;
+}
+p {
+    font-size: 20px;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 20px;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #e64a19;
+}
+main {
+    padding: 40px 20px;
+    text-align: center;
+}
+h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ff5722;
+}
+.feature-container,
+.advantage-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.feature,
+.advantage {
+    background: rgba(255, 87, 34, 0.2);
+    border: 2px solid #ff5722;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid #ff5722;
+}
+.social-links a {
+    color: #ff5722;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: #e64a19;
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .feature,
+    .advantage {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
