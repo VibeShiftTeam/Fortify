@@ -79,60 +79,59 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
-        <div id="menu" class="hidden sm:flex space-x-4 items-center">
+        <div class="hidden sm:flex space-x-4 items-center">
           <a href="index.html" class="text-gray-300 hover:text-white">ホーム</a>
           <a href="docs.html" class="text-gray-300 hover:text-white">コマンド一覧</a>
           <a href="status.html" class="text-gray-300 hover:text-white">ステータス</a>
           <a href="https://discord.com/oauth2/authorize?client_id=1240964440581603370&permissions=8&scope=bot+applications.commands" class="bg-gray-700 text-gray-200 hover:bg-gray-600 px-4 py-2 rounded">導入する</a>
           <a href="login.html" class="bg-blue-600 text-white hover:bg-blue-500 px-4 py-2 rounded">ダッシュボード</a>
+          <label for="language-selector" class="sr-only">Select language</label>
+          <select id="language-selector" class="bg-gray-700 text-gray-200 hover:bg-gray-600 px-2 py-1 rounded">
+            <option value="ja">日本語</option>
+            <option value="en">English</option>
+          </select>
         </div>
       </div>
     </div>
-  
-    <div id="mobile-menu" class="sm:hidden fixed inset-0 bg-gray-900 bg-opacity-70 z-20 hidden">
-      <div class="flex justify-end p-4">
-        <button id="close-menu" class="text-gray-300" aria-label="Close menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-      <div class="flex flex-col items-center space-y-6 py-8">
-        <a href="index.html" class="text-gray-300 text-xl hover:text-white">ホーム</a>
-        <a href="docs.html" class="text-gray-300 text-xl hover:text-white">コマンド一覧</a>
-        <a href="status.html" class="text-gray-300 text-xl hover:text-white">ステータス</a>
-        <a href="https://discord.com/oauth2/authorize?client_id=1240964440581603370&permissions=8&scope=bot+applications.commands" class="bg-gray-700 text-gray-200 hover:bg-gray-600 px-6 py-3 rounded text-xl">導入する</a>
-        <a href="login.html" class="bg-blue-600 text-white hover:bg-blue-500 px-6 py-3 rounded text-xl">ダッシュボード</a>
-        <label for="language-selector" class="text-gray-300">Select language</label>
-        <select id="language-selector" class="bg-gray-700 text-gray-200 hover:bg-gray-600 px-4 py-2 rounded text-lg">
-          <option value="ja">日本語</option>
-          <option value="en">English</option>
-        </select>
-      </div>
-    </div>
   </nav>
+
+  <div id="mobile-menu" class="sm:hidden fixed inset-0 bg-gray-900 bg-opacity-70 z-20 hidden">
+    <div class="flex justify-end p-4">
+      <button id="close-menu" class="text-gray-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col items-center space-y-6 py-8">
+      <a href="index.html" class="text-gray-300 text-xl hover:text-white">ホーム</a>
+      <a href="docs.html" class="text-gray-300 text-xl hover:text-white">コマンド一覧</a>
+      <a href="status.html" class="text-gray-300 text-xl hover:text-white">ステータス</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1240964440581603370&permissions=8&scope=bot+applications.commands" class="bg-gray-700 text-gray-200 hover:bg-gray-600 px-6 py-3 rounded text-xl">導入する</a>
+      <a href="login.html" class="bg-blue-600 text-white hover:bg-blue-500 px-6 py-3 rounded text-xl">ダッシュボード</a>
+      <label for="language-selector" class="text-gray-300">Select language</label>
+      <select id="language-selector" class="bg-gray-700 text-gray-200 hover:bg-gray-600 px-4 py-2 rounded text-lg">
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </div>
   
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const menuButton = document.getElementById("menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
       const closeMenuButton = document.getElementById("close-menu");
-      const desktopMenu = document.getElementById("menu");
-  
-      menuButton.addEventListener("click", () => {
-        mobileMenu.classList.remove("hidden");
-        desktopMenu.classList.add("hidden");
-        menuButton.classList.add("hidden");
-      });
-  
-      closeMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-        desktopMenu.classList.remove("hidden");
-        menuButton.classList.remove("hidden");
-      });
+      if (menuButton && mobileMenu && closeMenuButton) {
+        menuButton.addEventListener("click", () => {
+          mobileMenu.classList.remove("hidden");
+        });
+        closeMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      }
     });
   </script>
-  
   
   <section class="h-screen flex flex-col justify-center items-center bg-gray-900">
     <h1 class="text-6xl font-bold text-gray-200 mb-4" data-i18n="hello">Fortify</h1>
